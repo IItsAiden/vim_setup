@@ -31,6 +31,12 @@ nnoremap <tab> :bnext<CR>
 nnoremap <S-tab> :bprevious<CR>
 nnoremap e $
 
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap " "<ESC>i
+inoremap ' ''<ESC>i
+
 autocmd BufWritePre * :%s/\s\+$//e
 
 """"""""""""""""""""""""""""""
