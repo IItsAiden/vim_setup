@@ -1,6 +1,9 @@
 # vim_setup
-My setup for vim
+A simple vim setup
 
-1. https://github.com/IItsAiden/vim_setup.git ~/vim_setup
-2. chmod +x ~/vim_setup/setup.sh
-3. bash ~/vim_setup/setup.sh
+Installation:
+```
+git clone https://github.com/IItsAiden/vim_setup.git ~/vim_setup
+chmod +x ~/vim_setup/setup.sh
+bash ~/vim_setup/setup.sh
+```
