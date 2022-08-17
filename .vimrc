@@ -70,3 +70,8 @@ let g:NERDTreeDirArrowCollapsible = '-'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '>'
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
+""""""""""""""""""""""""""""""
+"coc
+""""""""""""""""""""""""""""""
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
