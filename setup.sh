@@ -20,7 +20,7 @@ sudo apt-get install -y nodejs
 
 # setup plugin manager & .vimrc file
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cp .vimrc ~/.vimrc
+cp ~/vim_setup/.vimrc ~/.vimrc
 
 # install plugin
 vim +PluginInstall +qall
@@ -30,7 +30,7 @@ cd ~/.vim/bundle/coc.nvim
 npm install
 
 # install python language server
-vim +CocInstall coc-pyright
+vim +'CocInstall coc-pyright'
 # refer to:
 # https://github.com/neoclide/coc.nvim/wiki/Language-servers
 # for more language
