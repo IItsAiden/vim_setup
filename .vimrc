@@ -4,8 +4,13 @@ set timeoutlen=1000 ttimeoutlen=0
 set modelines=0
 set cursorline
 
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$/
+
 filetype off                  " required
 filetype plugin indent on    " required
+let g:ale_disable_lsp = 1
+let g:ale_sign_column_always = 1
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -17,7 +22,9 @@ Plugin 'preservim/nerdtree'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'morhetz/gruvbox'
+
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'dense-analysis/ale'
 
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
