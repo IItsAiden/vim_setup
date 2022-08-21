@@ -25,6 +25,9 @@ cp ~/vim_setup/.vimrc ~/.vimrc
 # install plugin
 vim +PluginInstall +qall
 
+# copy coc-config file into .vim
+cp ~/vim_setup/coc-settings.json ~/.vim/coc-settings.json
+
 # build/index.js error prompt. Proceed to coc.nvim to install
 cd ~/.vim/bundle/coc.nvim
 npm install
