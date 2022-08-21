@@ -4,13 +4,8 @@ set timeoutlen=1000 ttimeoutlen=0
 set modelines=0
 set cursorline
 
-highlight RedundantSpaces ctermbg=red guibg=red
-match RedundantSpaces /\s\+$/
-
 filetype off                  " required
 filetype plugin indent on    " required
-let g:ale_disable_lsp = 1
-let g:ale_sign_column_always = 1
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -24,7 +19,6 @@ Plugin 'preservim/nerdtree'
 Plugin 'morhetz/gruvbox'
 
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'dense-analysis/ale'
 
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
@@ -33,18 +27,28 @@ call vundle#end()            " required
 
 """"""""""""""""""""""""""""""
 "mapping
-"""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
 nnoremap <tab> :bnext<CR>
 nnoremap <S-tab> :bprevious<CR>
 nnoremap e $
 
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap " ""<left>
+inoremap ' ''<left>
 
-autocmd BufWritePre * :%s/\s\+$//e
+""""""""""""""""""""""""""""""
+"autocmd
+""""""""""""""""""""""""""""""
+fun! TrimWhitespaceAndEOF()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    silent! %s#\($\n\s*\)\+\%$##
+    call winrestview(l:save)
+endfun
+
+autocmd BufWritePre * call TrimWhitespaceAndEOF()
 
 """"""""""""""""""""""""""""""
 "set identation (python)
@@ -77,6 +81,9 @@ let g:NERDTreeDirArrowCollapsible = '-'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '>'
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#coc#show_coc_status = 1
 
 """"""""""""""""""""""""""""""
 "coc
