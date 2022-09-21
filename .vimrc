@@ -4,6 +4,7 @@ set timeoutlen=1000 ttimeoutlen=0
 set modelines=0
 set cursorline
 set hidden
+set signcolumn=yes
 
 filetype off                  " required
 filetype plugin indent on    " required
