@@ -53,9 +53,6 @@ fun! TrimWhitespaceAndEOF()
 endfun
 
 autocmd BufWritePre * call TrimWhitespaceAndEOF()
-autocmd BufRead,BufNewFile *.vue setfiletype html
-autocmd BufRead,BufNewFile *.purs setfiletype purescript
-autocmd BufRead,BufNewFile *.l setfiletype C
 
 
 """"""""""""""""""""""""""""""
@@ -64,16 +61,17 @@ autocmd BufRead,BufNewFile *.l setfiletype C
 au BufNewFile,BufRead *.py
     \ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix
 
-au BufNewFile,BufRead *.vue
-    \ set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent
-
-autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
-autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
-
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent fileformat=unix
 set encoding=utf-8
 let python_highlight_all=1
 syntax on
+
+""""""""""""""""""""""""""""""
+"setup for (purescript)
+""""""""""""""""""""""""""""""
+syntax on
+filetype on
+filetype plugin indent on
 
 """"""""""""""""""""""""""""""
 "gruvbox
