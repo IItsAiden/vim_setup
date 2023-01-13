@@ -54,7 +54,6 @@ endfun
 
 autocmd BufWritePre * call TrimWhitespaceAndEOF()
 
-
 """"""""""""""""""""""""""""""
 "set identation (python)
 """"""""""""""""""""""""""""""
@@ -65,13 +64,6 @@ set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent fileformat=unix
 set encoding=utf-8
 let python_highlight_all=1
 syntax on
-
-""""""""""""""""""""""""""""""
-"setup for (purescript)
-""""""""""""""""""""""""""""""
-syntax on
-filetype on
-filetype plugin indent on
 
 """"""""""""""""""""""""""""""
 "gruvbox
